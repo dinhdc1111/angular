@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>{{title}}</h1>
+  <div class="caption">
+    <h4>Thông tin sinh viên</h4>
+    <img src="../assets/images/avatar.png" alt="avatar fpl" width="200">
+  </div>
+  <ul>
+    <li>
+      <strong>Họ tên: </strong> {{student.fullName}}
+    </li>
+    <li>
+      <strong>Ngày sinh: </strong> {{student.birthday}}
+    </li>
+    <li>
+      <strong>Giới tính: </strong>{{student.sex}}
+    </li>
+    <li>
+      <strong>Điểm Trung Bình: </strong>{{student.score}}
+    </li>
+  </ul>
+  <hr>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First</th>
+        <th>Last</th>
+        <th>Year</th>
+        <th>Passed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inventor of inventors">
+        <td scope="row">{{inventor.id}}</td>
+        <td>{{inventor.first}}</td>
+        <td>{{inventor.last}}</td>
+        <td>{{inventor.year}}</td>
+        <td>{{inventor.passed}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
