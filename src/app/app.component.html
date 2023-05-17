@@ -1,33 +1,15 @@
 <div class="card">
-    <div class="card-header">
-        <h1>{{title}}</h1>
+  <div class="card-header">
+    <h1>{{title}}</h1>
+    <hr>
+    <input type="text" placeholder="search..." (input)="setValue($event)">
+  </div>
+  <div class="card-body">
+    <div class="container">
+      <app-product-list [products]="products"></app-product-list>
     </div>
-    <div class="card-body">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Image</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let product of products">
-                    <td scope="row">{{product.id}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.price}}</td>
-                    <td><img [src]="product.img" alt=""></td>
-                    <!-- <td><img src={{product.img}} alt=""></td> -->
-                    <td>
-                        <button class="btn btn-danger">Remove</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="card-footer text-muted">
-        Footer
-    </div>
+  </div>
+  <div class="card-footer text-muted">
+    Footer
+  </div>
 </div>

@@ -29,4 +29,7 @@ export class AppComponent {
             img: 'https://picsum.photos/200/200',
         },
     ];
+    setValue(e: any) {
+      this.title = e.target.value;
+    }
 }
