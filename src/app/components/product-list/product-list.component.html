@@ -18,9 +18,10 @@
           <td scope="row">{{product.id}}</td>
           <td>{{product.name}}</td>
           <td>{{product.price}}</td>
-          <td>{{product.img}}</td>
+          <td><img [src]="product.img" alt=""></td>
           <td>
-            <button class="btn btn-danger" (click)="removeItem(product.id)">Remove</button>
+            <!-- <button class="btn btn-danger" (click)="removeItem(product.id)">Remove</button> -->
+            <button class="btn btn-danger">Delete</button>
           </td>
         </tr>
       </tbody>

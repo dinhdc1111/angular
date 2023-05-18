@@ -32,4 +32,10 @@ export class AppComponent {
     setValue(e: any) {
       this.title = e.target.value;
     }
+    onHandleRemove(id: any){
+    const confirm = window.confirm("Bạn có muốn xóa?");
+    if(confirm){
+      this.products = this.products.filter((item: any) => item.id != id)
+    }
+  }
 }

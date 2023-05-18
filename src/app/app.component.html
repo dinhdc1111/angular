@@ -6,7 +6,8 @@
   </div>
   <div class="card-body">
     <div class="container">
-      <app-product-list [products]="products"></app-product-list>
+      <!-- <app-product-list [products]="products" (onRemove)="onHandleRemove($event)"></app-product-list> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
   <div class="card-footer text-muted">

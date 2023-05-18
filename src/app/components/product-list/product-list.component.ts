@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { ProductService } from './../../services/product.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/Product';
 
 @Component({
@@ -7,11 +8,16 @@ import { IProduct } from 'src/app/interfaces/Product';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  @Input() products: any;
-  removeItem(id: any){
-    const confirm = window.confirm("Bạn có muốn xóa?");
-    if(confirm){
-      this.products = this.products.filter((item: any) => item.id != id)
-    }
+  products: IProduct[] = [];
+  constructor(private productService: ProductService) {}
+  ngOnInit() {
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data;
+    });
   }
+  // @Input() products: any;
+  // @Output() onRemove = new EventEmitter<any>();
+  // removeItem(id: any) {
+  //   this.onRemove.emit(id);
+  // }
 }
